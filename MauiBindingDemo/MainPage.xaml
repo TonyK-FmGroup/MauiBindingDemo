@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="using:MauiBindingDemo.Controls"
+             x:Class="MauiBindingDemo.MainPage">
+			 
+    <ScrollView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <Label Text="Products-Products" Grid.Column="0"/>
+            <controls:ProductList Products="{Binding Products}"
+                                  Grid.Column="0" Grid.Row="1"/>
+
+            <Label Text="Products-ContentItems" Grid.Column="1"/>
+            <controls:ContentList ContentItems="{Binding Products}"
+                                  Grid.Column="1" Grid.Row="1"/>
+            
+        </Grid>
+    </ScrollView>
+ 
+</ContentPage>
